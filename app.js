@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 //Database connexion
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://bnbbachir:nmrwDPUnE9N1AkRY@airbnb-shard-00-00-4eqv3.mongodb.net:27017,airbnb-shard-00-01-4eqv3.mongodb.net:27017,airbnb-shard-00-02-4eqv3.mongodb.net:27017/admin?replicaSet=airbnb-shard-0&ssl=true')
+mongoose.connect('mongodb://bnbbachir:nmrwDPUnE9N1AkRY@airbnb-shard-00-00-4eqv3.mongodb.net:27017,airbnb-shard-00-01-4eqv3.mongodb.net:27017,airbnb-shard-00-02-4eqv3.mongodb.net:27017/airbnb?ssl=true&replicaSet=airbnb-shard-0&authSource=admin')
 .then(
   () => { console.log("Database connected !") },
   err => { console.log("Error, database not connected !") }
