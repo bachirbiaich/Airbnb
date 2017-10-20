@@ -5,6 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//Database connexion
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://bnbbachir:nmrwDPUnE9N1AkRY@airbnb-shard-00-00-4eqv3.mongodb.net:27017,airbnb-shard-00-01-4eqv3.mongodb.net:27017,airbnb-shard-00-02-4eqv3.mongodb.net:27017/admin?replicaSet=airbnb-shard-0&ssl=true')
+.then(
+  () => { console.log("Database connected !") },
+  err => { console.log("Error, database not connected !") }
+);
+
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
