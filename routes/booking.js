@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 
-//reservations schema
+//booking schema
 var Schema = mongoose.Schema;
 var bookingSchema = new Schema(
     [
@@ -30,7 +30,7 @@ var bookingSchema = new Schema(
 var Booking = mongoose.model('booking', bookingSchema);
 
 
-/* GET reservations listing. */
+/* GET booking listing. */
 router.get('/', function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
   Booking.find(req.query,'',function(err,booking){
@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* GET reservations by id */
+/* GET booking by id */
 router.get('/:_id', function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
   Booking.find({_id: req.params._id},'',function(err,booking){
@@ -52,7 +52,7 @@ router.get('/:_id', function(req, res, next) {
   });
 });
 
-/* POST new reservations*/
+/* POST new booking */
 router.post('/', function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
   var newBooking = new Reservations(req.body);
@@ -65,7 +65,7 @@ router.post('/', function(req, res, next) {
   });
 });
 
-/* PATCH reservations by id */
+/* PATCH booking by id */
 router.patch('/:_id', function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
   Booking.update({_id: req.params._id},req.body,{multi: false},function(err,data){
@@ -76,7 +76,7 @@ router.patch('/:_id', function(req, res, next) {
   });
 });
 
-/* DELETE reservations by id */
+/* DELETE booking by id */
 router.delete('/:_id', function(req, res, next) {
     Booking.remove({_id: req.params._id},function(err){
     if (err)
