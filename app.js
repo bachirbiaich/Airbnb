@@ -16,7 +16,8 @@ mongoose.connect('mongodb://bnbbachir:nmrwDPUnE9N1AkRY@airbnb-shard-00-00-4eqv3.
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var apartments = requite('./routes/apartments');
+var apartments = require('./routes/apartments');
+var booking = require('./routes/booking');
 
 var app = express();
 
