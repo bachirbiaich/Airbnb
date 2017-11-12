@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var bookingSchema = new Schema(
     [
         {
-            //_id : { type: String, required: true },
+            _id : { type: String, required: true },
             user_id : { type: String, required: true },
             announcement_id : { type: String, required: true },
             start : { type: Date, required: true },
